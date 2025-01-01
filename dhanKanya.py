@@ -1,5 +1,5 @@
 import streamlit as st
-import anthropic
+from anthropic import Anthropic
 import pandas as pd
 import datetime
 import speech_recognition as sr
@@ -66,7 +66,7 @@ def main():
 
     # Create the Anthropic client with the API key
     try:
-        client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+        client = Anthropic(api_key=ANTHROPIC_API_KEY)
         st.sidebar.success("AI assistant initialized successfully!")
     except Exception as e:
         logger.error(f"Error creating Anthropic client: {e}")
